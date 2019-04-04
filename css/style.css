@@ -1,0 +1,19 @@
+body {
+  overflow: hidden;
+}
+.chatbox {
+  color: white;
+  font-family: Ubuntu Mono;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.user {
+  color: #F46161;
+  font-weight: bold;
+}
+
+.streamer {
+  color: #5EF695;
+  font-weight: bold;
+}

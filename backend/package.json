@@ -1,0 +1,19 @@
+{
+  "name": "douyu-chat-scrapper",
+  "version": "0.1.0",
+  "description": "Douyu's chat scrapper then output into html file ready for OBS or streaming application to consume",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "douyu",
+    "chat",
+    "scrapper"
+  ],
+  "author": "Wasin Thonkaew",
+  "license": "MIT",
+  "dependencies": {
+    "douyu": "^0.1.0"
+  }
+}
