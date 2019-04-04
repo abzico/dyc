@@ -20,9 +20,11 @@ It will help generating html file scrapping the last 20 (or configurable in the 
 # Screenshots
 
 * Initially start
+
 ![initially start](images/initially-start.png)
 
 * After some users commented on it
+
 ![users commented](images/users-commented.png)
 
 # Behind The Scene
