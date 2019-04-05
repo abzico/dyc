@@ -1,6 +1,6 @@
 # douyu-chat-scrapper
 
-It will help generating html file scrapping the last 20 (or configurable in the future) messages from users included a streamer itself in the chatbox ready for OBS or other streaming application to consume via browser source.
+It will help generating html file scrapping the last 20 (or configurable) messages from users included a streamer itself in the chatbox ready for OBS or other streaming application to consume via browser source.
 
 # Steps To Make It Work
 
