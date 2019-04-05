@@ -22,13 +22,15 @@ When you add a browser source, set the following setting accordingly
 
 ## Note
 
-To put `index.html` and `css/` to be accessible by local web server, you might want to do a sym soft link. This depends on your case.
+* To put `index.html` and `css/` to be accessible by local web server, you might want to do a sym soft link. This depends on your case.
+* Every time the program start, it will wipe out the existing HTML file and start over.
 
 # Environment Variables
 
 * `DYC_ROOMID` - `string` - define your room id as a streamer, you can easily check at your [Douyu account](https://mp.douyu.com/live/main). **Required**
+* `DYC_STREAMER_NN` - `string` - define streamer's nickname. Used to check to give different color among other users. **Required**
 * `DYC_OUTPUT_HTML_PATH` - `string` - define output path for generated HTML file to be consumed and configured at OBS or other streaming application
-* `DYC_KEEP_NUM_MSG` - `string` - number of latest messages to be kept in the chatbox, messages outside of this range are not included in generated HTML file
+* `DYC_KEEP_NUM_MSG` - `number` - number of latest messages to be kept in the chatbox, messages outside of this range are not included in generated HTML file
 
 # Screenshots
 

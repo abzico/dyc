@@ -3,18 +3,30 @@ const fs = require("fs");
 // TODO: Prior to execute this program
 // you need to set two environment variables
 // 1. DYC_ROOMID - for streamer's room id (required)
-// 2. DYC_OUTPUT_HTML_PATH - for output path of generated html file, if empty then default to /tmp/douyu-chat.html
-// 3. DYC_KEEP_NUM_MSG - number of latest messages to keep, if not default to 20
+// 2. DYC_STREAMER_NN - streamer nickname, to check and give different color differentiate from other users (required)
+// 3. DYC_OUTPUT_HTML_PATH - for output path of generated html file, if empty then default to /tmp/douyu-chat.html
+// 4. DYC_KEEP_NUM_MSG - number of latest messages to keep, if not default to 20
 
 var roomID;
 if (!process.env.DYC_ROOMID)
 {
-  console.log("ROOMID environment variable needs to be set prior to start this program\n");
+  console.log("DYC_ROOMID environment variable needs to be set prior to start this program\n");
   process.exit(1);
 }
 else
 {
   roomID = process.env.DYC_ROOMID;
+}
+
+var streamer_nn;
+if (!process.env.DYC_STREAMER_NN)
+{
+  console.log("DYC_STREAMER_NN environment variable needs to be set prior to start this program\n");
+  process.exit(1);
+}
+else
+{
+  streamer_nn = process.env.DYC_STREAMER_NN;
 }
 
 var destination_html_output = "/tmp/douyu-chat.html";
@@ -61,8 +73,9 @@ function output_html(dest_path, msg_objs)
     {
       var msg = msg_objs[i];
 
-      // if matches the room id of streamer
-      if (msg.rid == roomID)
+      // check nickname if matches, then it's stream
+      // FIXME: should use user id (uid) instead but it's inconvenient for users to get this information, using nick name is fine though for now
+      if (msg.nn == streamer_nn)
       {
         html_str += `<div class="msg-wrapper">
       <div class="msg-wrapper">
