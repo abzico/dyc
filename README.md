@@ -11,6 +11,19 @@ It will help generating html file scrapping the last 20 (or configurable) messag
 * Configure OBS or other streaming application's browser source to point to such .html file as well as its `css/style.css` (if need to specify it separately; which is the case for OBS), also you need to set vertical scroll offset to the farthest.
 * Now it should be working!
 
+## OBS Configuration
+
+When you add a browser source, set the following setting accordingly
+
+* URL - point to your url accessing such generated HTML which is provided by your local server i.e. apache, nginx, etc
+* Zoom - possibly you need to set maximum zoom level to be able to see chat text, in my case I need to set to `500`. I tried with set scaling to screen width like in normal showing HTML on mobile, but it doesn't work. Only setting Zoom level here works. Adjust the value according to what you see visually on OBS.
+* Vertical Scroll - Set to it a certain high value like 100000. This will ensure it always show the latest chat message.
+* Custom CSS - location to your CSS file. I recommended to also put it in a directory that web server can access it, although OBS seems to directly locate the file regarding whether it can access via local web server or not.
+
+## Note
+
+To put `index.html` and `css/` to be accessible by local web server, you might want to do a sym soft link. This depends on your case.
+
 # Environment Variables
 
 * `DYC_ROOMID` - `string` - define your room id as a streamer, you can easily check at your [Douyu account](https://mp.douyu.com/live/main). **Required**
