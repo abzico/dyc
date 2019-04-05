@@ -61,7 +61,8 @@ function output_html(dest_path, msg_objs)
     {
       var msg = msg_objs[i];
 
-      if (msg.nn == 'haxpor')
+      // if matches the room id of streamer
+      if (msg.rid == roomID)
       {
         html_str += `<div class="msg-wrapper">
       <div class="msg-wrapper">
