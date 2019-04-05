@@ -29,6 +29,7 @@ It will help generating html file scrapping the last 20 (or configurable) messag
 
 # Behind The Scene
 Generated HTML file is set to refresh every 3 seconds.
+The program listens to incoming data over socket throuth `douyu` package, then process message before geneation of HTML file.
 
 # License
 MIT, [ABZI.co](https://abzi.co)
