@@ -145,5 +145,10 @@ room.on('chatmsg', function(message){
   output_html(destination_html_output, msg_objs);
 });
 
+// monitor user entered into the room
+room.on('uenter', function(message){
+  console.log('--[' + message.nn + ']: entered into chat room--');
+});
+
 // Knock, knock ...
 room.open();

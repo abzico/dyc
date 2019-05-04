@@ -32,6 +32,34 @@ When you add a browser source, set the following setting accordingly
 * `DYC_OUTPUT_HTML_PATH` - `string` - define output path for generated HTML file to be consumed and configured at OBS or other streaming application
 * `DYC_KEEP_NUM_MSG` - `number` - number of latest messages to be kept in the chatbox, messages outside of this range are not included in generated HTML file
 
+# Event list
+
+Use the following event string to monitor the incoming message.
+
+Thanks to [yycdev/douyusdk](https://gitee.com/yycdev/douyusdk/blob/master/src/main/java/com/yycdev/douyu/sdk/constants/MsgType.java) for the list.
+
+* `loginres` - login / heartbeat response
+* `chatmsg` - barrage chat message
+* `onlinegift` - received fish ball
+* `dgb` - gift message
+* `uenter` - user enters the room
+* `rss` - room broadcast
+* `ranklist` - room contribution/leaderboard updated and broadcast
+* `ssd` - super barrage message
+* `spbc` - gift broadcast in the room
+* `ggbb` - room user grabbed red envelop
+* `rankup` - room ranking has changed
+* `error` - error message
+
+Example
+
+```
+// monitor user entered into the room
+room.on('uenter', function(message){
+  console.log('--[' + message.nn + ']: entered into chat room--');
+});
+```
+
 # Screenshots
 
 * Initially start
